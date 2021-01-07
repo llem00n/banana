@@ -83,5 +83,6 @@ namespace bnn
 std::ostream& operator<<(std::ostream& out, const bnn::banana& rhs);
 
 #include "banana.inl"
+#include "parser.inl"
 
 #endif // !BNN_BANANA_HPP

@@ -45,6 +45,4 @@ namespace bnn
 	}
 }
 
-#include "token.inl"
-
 #endif
