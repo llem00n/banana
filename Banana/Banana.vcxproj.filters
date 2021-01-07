@@ -23,24 +23,6 @@
     <ClInclude Include="banana.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="types.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="token.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="detail\headers\common.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="detail\headers\token.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="detail\headers\types.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="detail\common\common.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -52,25 +34,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="banana.inl">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="file.test">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="parser.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="output.inl">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="detail\banana.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="detail\output.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="detail\parser.inl">
       <Filter>Header Files</Filter>
     </None>
     <None Include="detail\input\parser.inl">
