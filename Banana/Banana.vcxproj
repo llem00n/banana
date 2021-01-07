@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="banana.inl" />
+    <None Include="file.test" />
     <None Include="token.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -40,5 +40,8 @@
     <None Include="token.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="file.test">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

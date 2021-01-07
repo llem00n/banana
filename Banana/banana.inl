@@ -117,14 +117,12 @@ std::string bnn::banana::to_string() const
 
 bnn::banana bnn::banana::parse(const char* str)
 {
-	std::cout << "Parsing: " << str << '\n';
 	banana bn;
 	char* cursor = const_cast<char*>(str);
 	std::vector<Token> tokens;
 	while (*cursor)
 	{
 		Token token = Token::get_token(cursor);
-		std::cout << "Token parsed (size: " << token.str.size() << "): " << token.str << "\n";
 		if (token.type != Token::Type::WhiteSpace) tokens.push_back(token);
 	}
 	tokens.push_back(Token("", Token::Type::End));
@@ -133,7 +131,6 @@ bnn::banana bnn::banana::parse(const char* str)
 	for (size_t i = 0; i < len; i++)
 		if (tokens[i].type & Token::Type::Constructable)
 		{
-			std::cout << "Constructable found: " << tokens[i].str << '\n';
 			bool new_line = false;
 			for (size_t x = i + 1; x < len; x++)
 			{

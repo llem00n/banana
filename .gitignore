@@ -341,3 +341,7 @@ healthchecksdb
 
 # Custom files
 Banana.cpp
+*.test
+
+# Custom folders
+[Tt]ests/
