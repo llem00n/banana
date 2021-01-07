@@ -150,6 +150,7 @@
   <ItemGroup>
     <None Include="banana.inl" />
     <None Include="file.test" />
+    <None Include="output.inl" />
     <None Include="parser.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

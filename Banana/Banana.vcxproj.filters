@@ -43,5 +43,8 @@
     <None Include="parser.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="output.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
