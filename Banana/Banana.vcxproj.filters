@@ -37,11 +37,11 @@
     <None Include="banana.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="token.inl">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="file.test">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parser.inl">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
 </Project>

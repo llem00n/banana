@@ -99,3 +99,90 @@ bnn::Token bnn::Token::get_token(char*& cursor)
 	cursor++;
 	return token;
 }
+
+bnn::banana bnn::banana::parse(const char* str)
+{
+	banana bn;
+	char* cursor = const_cast<char*>(str);
+	std::vector<Token> tokens;
+	while (*cursor)
+	{
+		Token token = Token::get_token(cursor);
+		if (token.type != Token::Type::WhiteSpace) tokens.push_back(token);
+	}
+	tokens.push_back(Token("", Token::Type::End));
+
+	size_t len = tokens.size();
+	for (size_t i = 0; i < len; i++)
+		if (tokens[i].type & Token::Type::Constructable)
+		{
+			bool new_line = false;
+			for (size_t x = i + 1; x < len; x++)
+			{
+				if (tokens[x].type & Token::Type::NewLine)
+					new_line = true;
+				else if ((tokens[x].type & Token::Type::Comma) || (tokens[x].type & Token::Type::End))
+				{
+					bn.push_back(banana::create_from_token(tokens[i]));
+					break;
+				}
+				else if ((tokens[x].type & Token::Type::Constructable) && new_line)
+				{
+					bn.push_back(banana::create_from_token(tokens[i]));
+					break;
+				}
+				else if (tokens[x].type & Token::Type::Constructable)
+				{
+					if (tokens[x].type & Token::Type::Array)
+					{
+						bn.push_back({ bnn::banana::create_from_token(tokens[i]), bnn::banana::create_from_token(tokens[x]) });
+						tokens[i].type = Token::Type::Undefined;
+						tokens[x].type = Token::Type::Undefined;
+						break;
+					}
+					else
+					{
+						std::cerr << "\"bnn::banana bnn::banana::parse(const char*)\" error: expected a comma (',') or a colon (':')\n";
+						throw std::runtime_error("\"bnn::banana bnn::banana::parse(const char*)\" error: expected a comma (',') or a colon (':')\n");
+					}
+				}
+				else if (tokens[x].type & Token::Type::Colon)
+				{
+					for (size_t y = x + 1; y < len; y++)
+						if (tokens[y].type & Token::Type::Constructable)
+						{
+							bn.push_back({ banana::create_from_token(tokens[i]), banana::create_from_token(tokens[y]) });
+							tokens[i].type = Token::Type::Undefined;
+							tokens[x].type = Token::Type::Undefined;
+							tokens[y].type = Token::Type::Undefined;
+							break;
+						}
+						else if (tokens[y].type & (Token::Type::Colon | Token::Type::End | Token::Type::Comma | Token::Type::Undefined))
+						{
+							std::cerr << "\"bnn::banana bnn::banana::parse(const char*)\" error: expected a value after colon (':')\n";
+							throw std::runtime_error("\"bnn::banana bnn::banana::parse(const char*)\" error: expected a value after colon (':')\n");
+						}
+					break;
+				}
+			}
+		}
+		else if (tokens[i].type & Token::Type::Colon)
+		{
+			std::cerr << "\"bnn::banana bnn::banana::parse(const char*)\" error: unexpected token. Expected a key value before the colon (':')\n";
+			throw std::runtime_error("\"bnn::banana bnn::banana::parse(const char*)\" error: unexpected token. Expected a key value before the colon (':')\n");
+		}
+	return bn;
+}
+
+bnn::banana bnn::banana::parse(const std::string& str)
+{
+	return parse(str.c_str());
+}
+
+bnn::banana bnn::banana::parse(const std::ifstream& fin)
+{
+	std::stringstream str_stream;
+	str_stream << fin.rdbuf();
+	std::string str = str_stream.str();
+	return parse(str);
+}
