@@ -143,26 +143,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="banana.hpp" />
-    <ClInclude Include="common.hpp" />
     <ClInclude Include="detail\common\common.hpp" />
     <ClInclude Include="detail\common\types.hpp" />
-    <ClInclude Include="detail\headers\common.hpp" />
-    <ClInclude Include="detail\headers\token.hpp" />
-    <ClInclude Include="detail\headers\types.hpp" />
     <ClInclude Include="detail\input\token.hpp" />
-    <ClInclude Include="token.hpp" />
-    <ClInclude Include="types.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="banana.inl" />
     <None Include="detail\banana.inl" />
     <None Include="detail\input\parser.inl" />
-    <None Include="detail\output.inl" />
     <None Include="detail\output\output.inl" />
-    <None Include="detail\parser.inl" />
     <None Include="file.test" />
-    <None Include="output.inl" />
-    <None Include="parser.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
