@@ -100,6 +100,20 @@ bnn::Token bnn::Token::get_token(char*& cursor)
 	return token;
 }
 
+bnn::banana bnn::banana::create_from_token(bnn::Token token)
+{
+	if (token.type == Token::Type::String)
+		return bnn::banana(token.str);
+	if (token.type == Token::Type::Integer)
+		return bnn::banana(std::stoi(token.str));
+	if (token.type == Token::Type::Double)
+		return bnn::banana(std::stod(token.str));
+	if (token.type == Token::Type::Boolean)
+		return bnn::banana(token.str == "true" ? true : false);
+	if (token.type == Token::Type::Array)
+		return bnn::banana::parse(token.str.c_str());
+}
+
 bnn::banana bnn::banana::parse(const char* str)
 {
 	banana bn;

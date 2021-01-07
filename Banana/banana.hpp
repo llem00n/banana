@@ -17,6 +17,18 @@ namespace bnn
 	class banana
 	{
 	public:
+		enum Type
+		{
+			None = 1 << 0,
+			Integer = 1 << 1,
+			Double = 1 << 2,
+			Boolean = 1 << 3,
+			String = 1 << 4,
+			Array = 1 << 5,
+			Printable = None | Integer | Double | Boolean | String | Array,
+		};
+
+	public:
 		banana();
 		banana(const banana& bn);
 		banana(const int& i);
@@ -71,7 +83,6 @@ namespace bnn
 
 	private:
 		inline bool take_in_quotes() const;
-		inline bool is_map() const;
 		static banana create_from_token(Token token);
 
 	private:
@@ -84,5 +95,6 @@ std::ostream& operator<<(std::ostream& out, const bnn::banana& rhs);
 
 #include "banana.inl"
 #include "parser.inl"
+#include "output.inl"
 
 #endif // !BNN_BANANA_HPP

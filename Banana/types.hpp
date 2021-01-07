@@ -7,9 +7,8 @@
 
 namespace bnn
 {
-	enum class Type { None, Integer, Double, Boolean, String, Array };
-
 	class banana;
+
 	namespace
 	{
 		struct Types
