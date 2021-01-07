@@ -9,8 +9,9 @@
 #include <sstream>
 #include <fstream>
 
-#include "types.hpp"
-#include "token.hpp"
+#include "detail/common/types.hpp"
+#include "detail/common/common.hpp"
+#include "detail/input/token.hpp"
 
 namespace bnn
 {
@@ -93,8 +94,8 @@ namespace bnn
 
 std::ostream& operator<<(std::ostream& out, const bnn::banana& rhs);
 
-#include "banana.inl"
-#include "parser.inl"
-#include "output.inl"
+#include "detail/banana.inl"
+#include "detail/input/parser.inl"
+#include "detail/output/output.inl"
 
 #endif // !BNN_BANANA_HPP
