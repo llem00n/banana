@@ -3,7 +3,7 @@
 
 namespace bnn
 {
-	const std::string busy_characters = ",.:[]{}()\n\t\v";
+	const std::string busy_characters = ",.:[]{}()\n\t\v ";
 }
 
 #endif

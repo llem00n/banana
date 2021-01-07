@@ -23,12 +23,14 @@ void bnn::Token::optimize_type()
 bnn::Token bnn::Token::get_token(char*& cursor)
 {
 	Token token("", Token::Type::Undefined);
-	if (*cursor == ',' || *cursor == '\n')
-		token = Token("", Token::Type::Comma);
+	if (*cursor == ',')
+		token = Token(",", Token::Type::Comma);
+	else if (*cursor == '\n')
+		token = Token("__", Token::Type::NewLine);
 	else if (*cursor == ':')
-		token = Token("", Token::Type::Colon);
+		token = Token(":", Token::Type::Colon);
 	else if (std::isspace(*cursor))
-		token = Token("", Token::Type::WhiteSpace);
+		token = Token("_", Token::Type::WhiteSpace);
 	else if (*cursor == '[' || *cursor == '{' || *cursor == '(')
 	{
 		token = Token("", Token::Type::Array);
@@ -60,6 +62,11 @@ bnn::Token bnn::Token::get_token(char*& cursor)
 			std::cerr << "\"Token get_token(char*&)\" error: expexted a closing bracket for array of " + token.str + '\n';
 			throw std::runtime_error("\"Token get_token(char*&)\" error: expexted a closing bracket for array of " + token.str + '\n');
 		}
+	}
+	else if (*cursor == ']' || *cursor == '}' || *cursor == ')')
+	{
+		std::cerr << "\"Token get_token(char*&)\" error: unexpected token: " + std::string(1, *cursor) + "\n";
+		throw std::runtime_error("\"Token get_token(char*&)\" error: unexpected token: " + std::string(1, *cursor) + "\n");
 	}
 	else if (*cursor == '\'' || *cursor == '"')
 	{
