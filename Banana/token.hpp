@@ -16,7 +16,21 @@ namespace bnn
 	namespace
 	{
 		struct Token {
-			enum class Type { Array, Colon, Comma, WhiteSpace, String, Undefined, None, Integer, Double, Boolean };
+			enum Type { 
+				Array         = 1 << 0, 
+				Colon         = 1 << 1, 
+				Comma         = 1 << 2, 
+				WhiteSpace    = 1 << 3, 
+				NewLine       = 1 << 4,
+				String        = 1 << 5, 
+				Undefined     = 1 << 6, 
+				None          = 1 << 7, 
+				Integer       = 1 << 8, 
+				Double        = 1 << 9, 
+				Boolean       = 1 << 10,
+				End           = 1 << 11,
+				Constructable = Array|String|None|Integer|Double|Boolean,
+			};
 
 			Token(std::string s, Type t) : str(s), type(t) {};
 			Token() : str(""), type(Type::Undefined) {};
