@@ -339,9 +339,9 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-# Custom files
-Banana.cpp
+# Project files
+Banana/Banana.cpp
 *.test
 
-# Custom folders
+# Project folders
 [Tt]ests/

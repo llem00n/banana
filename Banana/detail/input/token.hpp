@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <algorithm>
 
-#include "common.hpp"
+#include "../common/common.hpp"
 
 namespace bnn
 {

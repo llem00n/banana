@@ -23,27 +23,27 @@
     <ClInclude Include="banana.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="types.hpp">
+    <ClInclude Include="detail\common\common.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="token.hpp">
+    <ClInclude Include="detail\common\types.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="common.hpp">
+    <ClInclude Include="detail\input\token.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="banana.inl">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="file.test">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="parser.inl">
+    <None Include="detail\banana.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="output.inl">
+    <None Include="detail\input\parser.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="detail\output\output.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

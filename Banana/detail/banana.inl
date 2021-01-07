@@ -74,13 +74,15 @@ void bnn::banana::push_back(const bnn::banana& bn)
 	{
 		if (get_type() & banana::Type::None)
 			set_type(banana::Type::Array);
-		data.v.push_back(bn);
+		
 	}
 	else
 	{
-		std::cerr << "\"void bnn::banana::push_back(const bnn::banana&)\" error: the object is not an array\n";
-		throw std::runtime_error("\"void bnn::banana::push_back(const bnn::banana&)\" error: the object is not an array\n");
+		banana temp_bn = *this;
+		set_type(banana::Type::Array);
+		*this = { temp_bn };
 	}
+	data.v.push_back(bn);
 }
 
 std::size_t bnn::banana::size() const

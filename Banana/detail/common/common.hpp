@@ -1,5 +1,5 @@
 #ifndef BNN_COMMON_HPP
-#define BNN_COMON_HPP
+#define BNN_COMMON_HPP
 
 namespace bnn
 {
