@@ -340,7 +340,7 @@ ASALocalRun/
 healthchecksdb
 
 # Project files
-*.cpp
+Banana/Banana.cpp
 *.test
 
 # Project folders
