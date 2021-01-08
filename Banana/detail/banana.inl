@@ -270,3 +270,19 @@ bnn::banana::operator const std::string() const
 		throw std::runtime_error("\"bnn::banana::operator std::string()\" error: can't convert the object to std::string\n");
 	}
 }
+
+bnn::banana::operator std::vector<bnn::banana>()
+{
+	if (get_type() & banana::Type::Array)
+		return data.v;
+	else
+		return { *this };
+}
+
+bnn::banana::operator const std::vector<bnn::banana>() const
+{
+	if (get_type() & banana::Type::Array)
+		return data.v;
+	else
+		return { *this };
+}

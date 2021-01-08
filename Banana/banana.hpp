@@ -82,6 +82,9 @@ namespace bnn
 		operator std::string();
 		operator const std::string() const;
 
+		operator std::vector<banana>();
+		operator const std::vector<banana>() const;
+
 	private:
 		inline bool take_in_quotes() const;
 		static banana create_from_token(Token token);
