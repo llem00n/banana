@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{5f5eba41-1d3d-4849-91ab-ed55a171ebff}</ProjectGuid>
-    <RootNamespace>Banana</RootNamespace>
+    <RootNamespace>banana</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Banana.cpp" />
+    <ClCompile Include="banana.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="banana.hpp" />
