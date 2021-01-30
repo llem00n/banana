@@ -1,11 +1,13 @@
 #include <iostream>
-#include <fstream>
-#include <string>
-
-#include "banana.hpp"
+#include "banana/banana/banana.hpp"
 
 int main()
 {
-	bnn::banana bn = 10;
-	std::cout << bn << '\n';
+	try {
+		bnn::banana bn = bnn::array;
+		std::cin >> bn;
+		std::cout << bn << std::endl;
+	} catch (std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
 }

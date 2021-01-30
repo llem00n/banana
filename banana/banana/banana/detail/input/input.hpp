@@ -6,14 +6,16 @@
 #include <sstream>
 #include <stdexcept>
 #include <algorithm>
+#include <iostream>
 
-#include "../common/common.hpp"
+#include "../common/busy_characters.hpp"
+#include "../exceptions/exceptions.hpp"
 
 namespace bnn
 {
 	class banana;
 
-	namespace
+	namespace detail
 	{
 		struct Token {
 			enum Type { 
@@ -26,10 +28,11 @@ namespace bnn
 				Undefined     = 1 << 6, 
 				None          = 1 << 7, 
 				Integer       = 1 << 8, 
-				Double        = 1 << 9, 
-				Boolean       = 1 << 10,
-				End           = 1 << 11,
-				Constructable = Array|String|None|Integer|Double|Boolean,
+				Unsigned      = 1 << 9,
+				Double        = 1 << 10, 
+				Boolean       = 1 << 11,
+				End           = 1 << 12,
+				Constructable = Array|String|None|Integer|Unsigned|Double|Boolean,
 			};
 
 			Token(std::string s, Type t) : str(s), type(t) {};
@@ -44,5 +47,7 @@ namespace bnn
 		};
 	}
 }
+
+std::istream& operator>>(std::istream& in, bnn::banana& rhs);
 
 #endif

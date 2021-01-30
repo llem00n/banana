@@ -142,16 +142,29 @@
     <ClCompile Include="banana.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="banana.hpp" />
-    <ClInclude Include="detail\common\common.hpp" />
-    <ClInclude Include="detail\common\types.hpp" />
-    <ClInclude Include="detail\input\token.hpp" />
+    <None Include="banana\banana\detail\banana\banana.inl" />
+    <None Include="banana\banana\detail\banana\constructors.inl" />
+    <None Include="banana\banana\detail\banana\input.inl" />
+    <None Include="banana\banana\detail\banana\operator_access.inl" />
+    <None Include="banana\banana\detail\banana\operator_assigment.inl" />
+    <None Include="banana\banana\detail\banana\operator_conversion.inl" />
+    <None Include="banana\banana\detail\banana\output.inl" />
+    <None Include="banana\banana\detail\banana\seq_container_methods.inl" />
+    <None Include="banana\banana\detail\banana\type_management.inl" />
+    <None Include="banana\banana\detail\contents\constructors.inl" />
+    <None Include="banana\banana\detail\contents\operator_assigment.inl" />
+    <None Include="banana\banana\detail\contents\type_management.inl" />
+    <None Include="banana\banana\detail\exceptions\exceptions.inl" />
+    <None Include="file.test" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="detail\banana.inl" />
-    <None Include="detail\input\parser.inl" />
-    <None Include="detail\output\output.inl" />
-    <None Include="file.test" />
+    <ClInclude Include="banana\banana\detail\banana\banana.hpp" />
+    <ClInclude Include="banana\banana\detail\common\busy_characters.hpp" />
+    <ClInclude Include="banana\banana\detail\common\typedefs.hpp" />
+    <ClInclude Include="banana\banana\detail\contents\contents.hpp" />
+    <ClInclude Include="banana\banana\detail\exceptions\exceptions.hpp" />
+    <ClInclude Include="banana\banana\detail\input\input.hpp" />
+    <ClInclude Include="banana\banana\detail\output\output.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

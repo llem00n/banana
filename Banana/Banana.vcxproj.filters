@@ -20,31 +20,70 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="banana.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="detail\common\common.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="detail\common\types.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="detail\input\token.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="file.test">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="detail\banana.inl">
+    <None Include="banana\banana\detail\banana\banana.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="detail\input\parser.inl">
+    <None Include="banana\banana\detail\banana\constructors.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="detail\output\output.inl">
+    <None Include="banana\banana\detail\banana\input.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="banana\banana\detail\banana\operator_access.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\banana\operator_assigment.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\banana\operator_conversion.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\banana\output.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\banana\seq_container_methods.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\banana\type_management.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\contents\constructors.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\contents\operator_assigment.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\contents\type_management.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="banana\banana\detail\exceptions\exceptions.inl">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="banana\banana\detail\banana\banana.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="banana\banana\detail\common\busy_characters.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="banana\banana\detail\common\typedefs.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="banana\banana\detail\contents\contents.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="banana\banana\detail\exceptions\exceptions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="banana\banana\detail\input\input.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="banana\banana\detail\output\output.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
