@@ -3,11 +3,6 @@
 
 int main()
 {
-	try {
-		bnn::banana bn = bnn::array;
-		std::cin >> bn;
-		std::cout << bn << std::endl;
-	} catch (std::exception& e) {
-		std::cout << e.what() << '\n';
-	}
+	bnn::banana bn = bnn::banana::parse("5.5b");
+	std::cout << bn << '\n';
 }

@@ -29,33 +29,33 @@ namespace bnn
 			};
 
 		public:
-			Contents();
-			Contents(const Contents& contents);
-			Contents(const types::__None& n);
-			Contents(const types::__Array& a);
-			Contents(const types::int_type& i);
-			Contents(const types::double_type& d);
-			Contents(const types::bool_type& b);
-			Contents(const types::string_type& s);
-			Contents(const types::cstring_type& cs);
-			Contents(const types::array_type& a);
-			Contents(const types::init_list_type& a);
-			~Contents();
+			inline Contents();
+			inline Contents(const Contents& contents);
+			inline Contents(const types::__None& n);
+			inline Contents(const types::__Array& a);
+			inline Contents(const types::int_type& i);
+			inline Contents(const types::double_type& d);
+			inline Contents(const types::bool_type& b);
+			inline Contents(const types::string_type& s);
+			inline Contents(const types::cstring_type& cs);
+			inline Contents(const types::array_type& a);
+			inline Contents(const types::init_list_type& a);
+			inline ~Contents();
 
 		public:
-			Contents& operator=(const Contents& rhs);
-			Contents& operator=(const types::__None& n);
-			Contents& operator=(const types::int_type& rhs);
-			Contents& operator=(const types::double_type& rhs);
-			Contents& operator=(const types::bool_type& rhs);
-			Contents& operator=(const types::string_type& rhs);
-			Contents& operator=(const types::cstring_type& rhs);
-			Contents& operator=(const types::array_type& rhs);
-			Contents& operator=(const types::init_list_type& rhs);
+			inline Contents& operator=(const Contents& rhs);
+			inline Contents& operator=(const types::__None& n);
+			inline Contents& operator=(const types::int_type& rhs);
+			inline Contents& operator=(const types::double_type& rhs);
+			inline Contents& operator=(const types::bool_type& rhs);
+			inline Contents& operator=(const types::string_type& rhs);
+			inline Contents& operator=(const types::cstring_type& rhs);
+			inline Contents& operator=(const types::array_type& rhs);
+			inline Contents& operator=(const types::init_list_type& rhs);
 
 		public:
-			Type get_type() const;
-			void set_type(Type type);
+			inline Type get_type() const;
+			inline void set_type(Type type);
 
 		public:
 			std::unique_ptr<types::int_type> i;

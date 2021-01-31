@@ -145,6 +145,7 @@
     <None Include="banana\banana\detail\banana\banana.inl" />
     <None Include="banana\banana\detail\banana\constructors.inl" />
     <None Include="banana\banana\detail\banana\input.inl" />
+    <None Include="banana\banana\detail\banana\is_methods.inl" />
     <None Include="banana\banana\detail\banana\operator_access.inl" />
     <None Include="banana\banana\detail\banana\operator_assigment.inl" />
     <None Include="banana\banana\detail\banana\operator_conversion.inl" />

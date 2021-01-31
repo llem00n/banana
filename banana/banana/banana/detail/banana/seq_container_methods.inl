@@ -28,10 +28,6 @@ bnn::banana& bnn::banana::back() {
 		throw detail::exceptions::use_error("back()", "array");
 }
 
-bnn::detail::types::bool_type bnn::banana::is_none() const {
-	return (get_type() & Type::None) ? true : false;
-}
-
 bnn::detail::types::bool_type bnn::banana::empty() const {
 	if (get_type() & Type::Array)
 		return contents.a->empty();

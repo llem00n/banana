@@ -1,7 +1,8 @@
 void bnn::detail::Token::optimize_type() {
 	if (type == Type::Undefined) {
 		std::istringstream iss(str);
-		int y; double z;
+		types::int_type y; types::double_type z;
+		iss >> y; iss >> z;
 		std::string intersection;
 		std::set_intersection(str.begin(), str.end(), busy_characters.begin(), busy_characters.end(), std::back_inserter(intersection));
 
@@ -9,9 +10,9 @@ void bnn::detail::Token::optimize_type() {
 			type = Type::None;
 		else if (str == "false" || str == "true")
 			type = Type::Boolean;
-		else if (iss >> y)
+		else if (y == z)
 			type = Type::Integer;
-		else if (iss >> z)
+		else if (z > y)
 			type = Type::Double;
 		else if (intersection.size() == 0)
 			type = Type::String;

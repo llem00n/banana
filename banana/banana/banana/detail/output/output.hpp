@@ -7,6 +7,6 @@ namespace bnn {
 	class banana;
 }
 
-std::ostream& operator<<(std::ostream& out, const bnn::banana& rhs);
+inline std::ostream& operator<<(std::ostream& out, const bnn::banana& rhs);
 
 #endif

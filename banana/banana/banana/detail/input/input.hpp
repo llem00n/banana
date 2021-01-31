@@ -35,12 +35,12 @@ namespace bnn
 				Constructable = Array|String|None|Integer|Unsigned|Double|Boolean,
 			};
 
-			Token(std::string s, Type t) : str(s), type(t) {};
-			Token() : str(""), type(Type::Undefined) {};
+			inline Token(std::string s, Type t) : str(s), type(t) {};
+			inline Token() : str(""), type(Type::Undefined) {};
 
-			void optimize_type();
+			inline void optimize_type();
 
-			static Token get_token(char*& cursor);
+			inline static Token get_token(char*& cursor);
 
 			std::string str;
 			Type type;
@@ -48,6 +48,6 @@ namespace bnn
 	}
 }
 
-std::istream& operator>>(std::istream& in, bnn::banana& rhs);
+inline std::istream& operator>>(std::istream& in, bnn::banana& rhs);
 
 #endif

@@ -36,8 +36,8 @@ namespace bnn {
 		}
 	}
 
-	detail::types::__None none;
-	detail::types::__Array array;
+	const detail::types::__None none;
+	const detail::types::__Array array;
 }
 
 #endif // !BNN_DETAIL_TYPEDFS_HPP

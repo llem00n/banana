@@ -62,6 +62,9 @@
     <None Include="banana\banana\detail\exceptions\exceptions.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="banana\banana\detail\banana\is_methods.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="banana\banana\detail\banana\banana.hpp">
